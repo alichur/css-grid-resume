@@ -1,0 +1,103 @@
+/* CSS VARIABLES */
+
+:root {
+    --paper-height: 292mm;
+    --paper-width : 210mm;
+
+}
+
+/* CSS GRID LAYOUT, MOBILE */
+
+.cv {
+    padding              : 8px;
+    font-family          : "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    display              : grid;
+    grid-template-columns: minmax(100px, auto);
+    grid-auto-rows       : minmax(80px, auto);
+    grid-template-areas  :
+        "personal"
+        "contact"
+        "work"
+        "education"
+        "skills"
+        "certifications"
+        "community";
+}
+
+.personal {
+    grid-area       : personal;
+    background-color: grey;
+}
+
+.contact {
+    grid-area       : contact;
+    background-color: purple;
+}
+
+.work {
+    grid-area       : work;
+    background-color: blue;
+}
+
+.hobbies {
+    grid-area       : hobbies;
+    background-color: red;
+}
+
+.skills {
+    grid-area       : skills;
+    background-color: yellow;
+
+}
+
+.education {
+    grid-area       : education;
+    background-color: green;
+
+}
+
+.awards {
+    grid-area       : awards;
+    background-color: orange;
+
+}
+
+.certifications {
+    grid-area       : certifications;
+    background-color: black;
+
+}
+
+.community {
+    grid-area       : community;
+    background-color: grey;
+
+}
+
+/* align cv to center of page */
+
+.wrapper {
+    padding       : 0;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+/* LARGE SCREEN */
+
+@media (min-width: 210mm),
+print {
+    .cv {
+        display              : grid;
+        width                : 250px;
+        height               : 352.5px;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows   : 1fr 1fr 1fr 1fr;
+        box-shadow           : 0 5px 9px 0 rgba(0, 0, 0, 0.15);
+        grid-template-areas  :
+            "personal  contact"
+            "work  education"
+            "work  skills"
+            "certifications  community";
+    }
+}
