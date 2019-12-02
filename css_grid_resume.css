@@ -50,16 +50,20 @@
 
 }
 
+.about {
+    grid-area: about;
+}
+
 .work {
     grid-area: work;
 }
 
-.skills {
-    grid-area: skills;
-}
-
 .education {
     grid-area: education;
+}
+
+.skills {
+    grid-area: skills;
 }
 
 .certifications {
@@ -68,6 +72,10 @@
 
 .community {
     grid-area: community;
+}
+
+.hobbies {
+    grid-area: hobbies;
 }
 
 .avatar {
@@ -151,7 +159,7 @@ p {
 /* aligns resume to center of page */
 
 .wrapper {
-    padding       : 0;
+    padding       : 2em 0 0 0;
     display       : flex;
     flex-direction: column;
     align-items   : center;
@@ -159,16 +167,17 @@ p {
 
 /* MEDIUM  SCREEN */
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
     .resume {
         grid-template-columns: 2fr 1fr;
         grid-template-areas  :
             "name image"
+            "about about"
             "work work"
             "education education"
             "skills skills"
             "certifications certifications"
-            "references references"
+            "hobbies hobbies"
             "community community";
         box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.15);
     }
@@ -185,10 +194,7 @@ p {
 @media (min-width: 900px),
 print {
     .resume {
-        font-size            : 80%;
-        display              : grid;
-        width                : var(--paper-width);
-        height               : var(--paper-height);
+        width                : 80%;
         grid-template-columns: .75fr .75fr 1fr;
         grid-template-rows   : 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas  :
@@ -218,6 +224,9 @@ print {
     }
 
     .resume {
+        font-size : 80%;
+        width     : var(--paper-width);
+        height    : var(--paper-height);
         box-shadow: none;
     }
 
